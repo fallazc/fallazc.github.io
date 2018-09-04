@@ -1,10 +1,54 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Coming soon</title>
+		<meta charset="UTF-8">
+		
+		<title>FZC - Developer</title>
+		
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+		<script src="resources/js/content-declarations.js"></script>
+		
+		<script src="resources/js/content-transition.js"></script>
+		
+		<script src="resources/js/content-loader.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="resources/css/style.css">
+		
+		<link rel="stylesheet" type="text/css" href="resources/css/extraglyphicon.css">
 	</head>
 	
 	<body>
-		<h1>Coming soon</h1>
+		<div class = "container-fluid">
+			<div class="row" id="navbar">
+				<!-- Navigation buttons -->
+				<div class="col-xs-1" id="logo">
+					<a href="#"><button class="btn btn-default btn-sm">Logo Here</button></a>
+				</div>
+				<!-- Main links -->
+				<div class="col-xs-6 col-xs-offset-2 text-center" id="main-nav-buttons">
+					<a href="#home" onclick="transitionToPage('home')"><span class="glyphicon glyphicon-home"></span></a><!-- Home -->
+					<a href="#skills" onclick="transitionToPage('skills')"><span class="glyphicon glyphicon-cog"></span></a><!-- Skills -->
+					<a href="#my-work" onclick="transitionToPage('my-work')"><span class="glyphicon glyphicon-eye-open"></span></a><!-- MyWork -->
+					<a href="#contact" onclick="transitionToPage('contact')"><span class="glyphicon glyphicon-envelope"></span></a><!-- Contact -->
+					<a href="#about" onclick="transitionToPage('about')"><span class="glyphicon glyphicon-user"></span></a><!-- About -->
+				</div>
+				<!-- Social links buttons -->
+				<div class="col-xs-3 text-center" id="social-nav-buttons">
+					<a href="#"><span class="extraglyphicon extraglyphicon-icons8-github"></span></a><!-- "Github" -->
+					<a href="#"><span class="extraglyphicon extraglyphicon-icons8-stack-overflow"></span></a><!-- StackOverflow" -->
+					<a href="#"><span class="extraglyphicon extraglyphicon-icons8-linkedin"></span></a><!-- LinkedIn" -->
+				</div>
+			</div>
+			<div class="row" id="contentContainer">
+				
+			</div>
+		</div>
 	</body>
 </html>

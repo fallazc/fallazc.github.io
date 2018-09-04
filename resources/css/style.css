@@ -1,0 +1,71 @@
+body {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.container-fluid{
+	min-height: 100%;
+    height:auto !important; /* cross-browser */
+    height: 100%;
+	background-color:#252627;
+}
+
+span.glyphicon {
+    font-size: 1.7em;
+	margin-right: 10%;
+	color:#4d4d4e;
+}
+
+span.glyphicon-user {
+	margin-right: 0%;
+}
+
+span.extraglyphicon {
+	font-size: 1.25em;
+	margin-right: 10%;
+	color:#4d4d4e;
+}
+
+span.extraglyphicon-linkedin {
+	margin-left: 0%;
+	margin-right: 0%;
+	
+}
+
+#main-nav-buttons {
+	
+}
+
+#social-nav-buttons {
+	padding-top:0.5%;
+	visibility: hidden;
+}
+
+@media only screen and (min-width: 530px) {
+    #social-nav-buttons {
+        visibility: visible;
+     }
+}
+
+#navbar{
+	min-height: 20%;
+    height:auto !important; /* cross-browser */
+    height: 20%;
+	background-color:#181818;
+	padding-top:9px;
+	padding-bottom:9px;
+}
+
+#contentContainer{
+	min-height: 80%;
+    height:auto !important; /* cross-browser */
+    height: 80%;
+	margin-top:9px;
+	font-weight:normal;
+	font-size:11px;
+	font-family:"Open Sans", sans-serif;
+	letter-spacing:3px;
+	color:red;
+	opacity:1;
+}
