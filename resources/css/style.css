@@ -30,7 +30,6 @@ span.extraglyphicon {
 span.extraglyphicon-linkedin {
 	margin-left: 0%;
 	margin-right: 0%;
-	
 }
 
 #main-nav-buttons {
@@ -57,10 +56,16 @@ span.extraglyphicon-linkedin {
 	padding-bottom:9px;
 }
 
+#loadingScreen{
+	background-color: green;
+	left:0%;
+	height:100%;
+    width: 100%;
+    position: absolute;
+	z-index:1;
+}
+
 #contentContainer{
-	min-height: 80%;
-    height:auto !important; /* cross-browser */
-    height: 80%;
 	margin-top:9px;
 	font-weight:normal;
 	font-size:11px;
@@ -68,4 +73,6 @@ span.extraglyphicon-linkedin {
 	letter-spacing:3px;
 	color:red;
 	opacity:1;
+	transform:scale(1);
+	transition: opacity 2s, transform 2s;
 }
