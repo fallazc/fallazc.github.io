@@ -1,6 +1,6 @@
 let onPageLoad = function(e) {
 	const start = window.location.href.indexOf('#');
-	if ( start === -1) {
+	if ( start === -1 || start === (window.location.href.length - 1)) {
 		transitionToPage('home');
 	}
 	else {

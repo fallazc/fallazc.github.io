@@ -1,3 +1,31 @@
+let addTransitionEndListener = function(container, handler){
+	container.addEventListener("webkitTransitionEnd ", handler, false);
+	container.addEventListener("MSTransitionEnd", handler, false);
+	container.addEventListener("oTransitionEnd", handler, false);
+	container.addEventListener("transitionend", handler, false);
+}
+
+let removeTransitionEndListener = function(container, handler){
+	container.removeEventListener("webkitTransitionEnd ", handler, false);
+	container.removeEventListener("MSTransitionEnd", handler, false);
+	container.removeEventListener("oTransitionEnd", handler, false);
+	container.removeEventListener("transitionend", handler, false);
+}
+
+let startTransition = function() {
+	let container = document.getElementById("contentContainer");
+	let loadingScreen = document.getElementById('loadingScreen');
+	
+	loadingScreen.style.transition= 'left 1.5s';
+	loadingScreen.style.left = '0%';
+	
+	container.style.opacity = '0.4';
+	container.style.transform = 'scale(0.8)';
+	//document.body.style.overflow='hidden';
+	
+	addTransitionEndListener(container, onScaleDownTransitionEnd);
+}
+
 let transitionToPage = function(pageName){
 	let container = document.getElementById("contentContainer") ;
 	switch(pageName){
@@ -19,47 +47,61 @@ let transitionToPage = function(pageName){
 		default:
 			break;
 	}
-	
-	
+	startTransition();
 	//$(container).removeClass(c);
 	console.log('Transitioned to page ' + pageName);
 }
 
-let callfunction = function(event){
-	console.log('transition done');
-	console.log(event);
+let onScaleUpTransitionEnd = function(event){
+	console.log('onScaleUpTransitionEnd');
+	//console.log(event);
+	
+	let container = document.getElementById("contentContainer");
 	let loadingScreen = document.getElementById('loadingScreen');
 	
 	loadingScreen.style.transition= '';
-	loadingScreen.style.left = '-100%';
+	loadingScreen.style.left = '-1000%';
+	
+	removeTransitionEndListener(container, onScaleUpTransitionEnd);
 }
 
-var a = true;
+let counter = 0;
+
+let onScaleDownTransitionEnd = function(event){
+	++counter;
+	
+	if (counter == 2){
+		console.log('onScaleDownTransitionEnd');
+		//console.log(event);
+		
+		let container = document.getElementById("contentContainer");
+		let loadingScreen = document.getElementById('loadingScreen');
+		
+		loadingScreen.style.transition= 'left 0.5s';
+		loadingScreen.style.left = '100%';
+		
+		container.style.opacity = '1';
+		container.style.transform = 'scale(1)';
+		//document.body.style.overflow='visible';
+		
+		removeTransitionEndListener(container, onScaleDownTransitionEnd);
+		
+		addTransitionEndListener(container, onScaleUpTransitionEnd);
+		
+		counter = 0;
+	}
+}
 
 let handleclick = function(){
 	let container = document.getElementById("contentContainer");
 	let loadingScreen = document.getElementById('loadingScreen');
 	
 	loadingScreen.style.transition= 'left 1.5s';
+	loadingScreen.style.left = '0%';
 	
-	if (a)
-	{
-		container.style.opacity = '0.4';
-		container.style.transform = 'scale(0.8)';
-		//document.body.style.overflow='hidden';
-		loadingScreen.style.left = '100%';
-	}
-	else {
-		container.style.opacity = '1';
-		container.style.transform = 'scale(1)';
-		//document.body.style.overflow='visible';
-		loadingScreen.style.left = '200%';
-	}
+	container.style.opacity = '0.4';
+	container.style.transform = 'scale(0.8)';
+	//document.body.style.overflow='hidden';
 	
-	a = !a;
-	
-	container.addEventListener("webkitTransitionEnd ", callfunction,false);
-	container.addEventListener("MSTransitionEnd", callfunction,false);
-	container.addEventListener("oTransitionEnd", callfunction,false);
-	container.addEventListener("transitionend", callfunction,false);
+	addTransitionEndListener(container, onScaleDownTransitionEnd);
 }

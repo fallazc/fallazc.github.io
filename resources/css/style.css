@@ -58,8 +58,8 @@ span.extraglyphicon-linkedin {
 
 #loadingScreen{
 	background-color: green;
-	left:0%;
-	height:100%;
+	left:-1000%;
+	height:94.5%;
     width: 100%;
     position: absolute;
 	z-index:1;
@@ -74,5 +74,5 @@ span.extraglyphicon-linkedin {
 	color:red;
 	opacity:1;
 	transform:scale(1);
-	transition: opacity 2s, transform 2s;
+	transition: opacity 1.5s, transform 1.5s;
 }
