@@ -26,9 +26,9 @@ let startTransition = function() {
 	addTransitionEndListener(container, onScaleDownTransitionEnd);
 }
 
-let transitionToPage = function(pageName){
-	let container = document.getElementById("contentContainer") ;
-	switch(pageName){
+let pageTransitioner = function(container, pageName) {
+	return function() {
+		switch(pageName){
 		case 'home':
 			container.innerHTML = homePageContent;
 			break;
@@ -47,6 +47,21 @@ let transitionToPage = function(pageName){
 		default:
 			break;
 	}
+	};
+}
+
+let transitionIsRunning = false;
+
+let transitionToPage = function(pageName){
+	if (transitionIsRunning)
+		return;
+	
+	transitionIsRunning = true;
+	
+	let container = document.getElementById("contentContainer") ;
+	
+	addTransitionEndListener(container, pageTransitioner(container, pageName));
+	
 	startTransition();
 	//$(container).removeClass(c);
 	console.log('Transitioned to page ' + pageName);
@@ -63,6 +78,8 @@ let onScaleUpTransitionEnd = function(event){
 	loadingScreen.style.left = '-1000%';
 	
 	removeTransitionEndListener(container, onScaleUpTransitionEnd);
+	
+	transitionIsRunning = false;
 }
 
 let counter = 0;
@@ -90,18 +107,4 @@ let onScaleDownTransitionEnd = function(event){
 		
 		counter = 0;
 	}
-}
-
-let handleclick = function(){
-	let container = document.getElementById("contentContainer");
-	let loadingScreen = document.getElementById('loadingScreen');
-	
-	loadingScreen.style.transition= 'left 1.5s';
-	loadingScreen.style.left = '0%';
-	
-	container.style.opacity = '0.4';
-	container.style.transform = 'scale(0.8)';
-	//document.body.style.overflow='hidden';
-	
-	addTransitionEndListener(container, onScaleDownTransitionEnd);
 }

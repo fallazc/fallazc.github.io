@@ -2,19 +2,23 @@ body {
     height: 100%;
     width: 100%;
     position: absolute;
+	background-color:#252627;
 }
 
 .container-fluid{
 	min-height: 100%;
     height:auto !important; /* cross-browser */
     height: 100%;
-	background-color:#252627;
 }
 
 span.glyphicon {
     font-size: 1.7em;
 	margin-right: 10%;
 	color:#4d4d4e;
+}
+
+a span.glyphicon:hover, a span.extraglyphicon:hover {
+	color:#08fdd8;
 }
 
 span.glyphicon-user {
@@ -56,6 +60,80 @@ span.extraglyphicon-linkedin {
 	padding-bottom:9px;
 }
 
+.home h1{
+	color: #fff;
+}
+
+.about p {
+	font-size: 13px;
+	line-height: 18px;
+	color: #ffffff;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 300;
+}
+
+.text-zone p {
+	font-size: 14px !important;
+	color: #fff;
+}
+
+h1 {
+	font-size: 54px !important;
+	line-height: 53px;
+	margin: 0;
+	font-family: sans-serif;
+	font-weight: bold;
+	color: #08fdd8;
+}
+
+h5 {
+	color:#8d8d8d;
+	margin-top: 9px;
+	font-weight: normal;
+	font-size: 11px;
+	font-family: "Open Sans", sans-serif;
+	letter-spacing: 3px;
+}
+
+.text-zone {
+	position: absolute;
+	left: 10%;
+	top: 50%;
+	width: 85%;
+	max-height: 90%;
+	
+	position: static !important;
+	max-height: auto;
+	min-height: 350px;
+	float: left;
+	margin-left: 10%;
+	margin-top: 10%;
+}
+
+.skills {
+	
+}
+
+.btn-contact {
+	color: #08fdd8;
+	background-color:#252627;
+	font-size: 11px;
+	letter-spacing: 4px;
+	text-decoration: none;
+	padding: 8px 12px;
+	border: 1px solid #08fdd8;
+	margin-top: 25px;
+	float: left;
+	border-radius: 3px;
+	white-space: nowrap;
+}
+
+.btn-contact:hover, btn-contact:visited, btn-contact:link, btn-contact:active{
+	color:#252627;
+	background-color: #08fdd8;
+	text-decoration: none;
+}
+
 #loadingScreen{
 	background-color: green;
 	left:-1000%;
@@ -70,7 +148,6 @@ span.extraglyphicon-linkedin {
 	font-weight:normal;
 	font-size:11px;
 	font-family:"Open Sans", sans-serif;
-	letter-spacing:3px;
 	color:red;
 	opacity:1;
 	transform:scale(1);
