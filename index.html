@@ -3,15 +3,17 @@
 	<head>
 		<meta charset="UTF-8">
 		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 		<title>FZC - Developer</title>
-		
+		<!--
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-		<!-- jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- jQuery library 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
 
-		<!-- Latest compiled JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!-- Latest compiled JavaScript 
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 	
 		<script src="resources/js/content-declarations.js"></script>
 		
@@ -19,41 +21,47 @@
 		
 		<script src="resources/js/content-loader.js"></script>
 		
+		<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="resources/css/extraglyphicon.css">
 		<link rel="stylesheet" type="text/css" href="resources/css/style.css">
 		
-		<link rel="stylesheet" type="text/css" href="resources/css/extraglyphicon.css">
+		
 	</head>
 	
 	<body>
-		<div class = "container-fluid">
-			<div class="row" id="navbar">
+		<div class = "container">
+			<div class="navbar">
 				<!-- Navigation buttons -->
-				<div class="col-xs-1" id="logo">
-					<a href="#home"><button class="btn btn-default btn-sm" onclick="transitionToPage('home')">Logo Here</button></a>
+				<div class="logo">
+					<a href="#home"><button onclick="transitionToPage('home')">Logo</button></a>
 				</div>
 				
 				<!-- Main links -->
-				<div class="col-xs-6 col-xs-offset-2 text-center" id="main-nav-buttons">
-					<a href="#home" onclick="transitionToPage('home')"><span class="glyphicon glyphicon-home"></span></a><!-- Home -->
-					<a href="#skills" onclick="transitionToPage('skills')"><span class="glyphicon glyphicon-cog"></span></a><!-- Skills -->
-					<a href="#my-work" onclick="transitionToPage('my-work')"><span class="glyphicon glyphicon-eye-open"></span></a><!-- MyWork -->
-					<a href="#contact" onclick="transitionToPage('contact')"><span class="glyphicon glyphicon-envelope"></span></a><!-- Contact -->
-					<a href="#about" onclick="transitionToPage('about')"><span class="glyphicon glyphicon-user"></span></a><!-- About -->
+				<div id="main-nav-buttons">
+					<a rel="home" href="#home" onmouseenter = "showTextDescription('home')" onclick="transitionToPage('home')" onmouseleave = "hideTextDescription('home')"><span class="glyphicon glyphicon-home"></span></a><!-- Home -->
+					<a rel="skills" href="#skills" onmouseenter = "showTextDescription('skills')" onclick="transitionToPage('skills')" onmouseleave = "hideTextDescription('skills')"><span class="glyphicon glyphicon-cog"></span></a><!-- Skills -->
+					<a rel="my-work" href="#my-work" onmouseenter = "showTextDescription('my-work')" onclick="transitionToPage('my-work')" onmouseleave = "hideTextDescription('my-work')"><span class="glyphicon glyphicon-eye-open"></span></a><!-- MyWork -->
+					<a rel="contact" href="#contact" onmouseenter = "showTextDescription('contact')" onclick="transitionToPage('contact')" onmouseleave = "hideTextDescription('contact')"><span class="glyphicon glyphicon-envelope"></span></a><!-- Contact -->
+					<a rel="about" href="#about" onmouseenter = "showTextDescription('about')" onclick="transitionToPage('about')" onmouseleave = "hideTextDescription('about')"><span class="glyphicon glyphicon-user"></span></a><!-- About -->
+				</div>
+				
+				<!-- Main links -->
+				<div id="main-nav-buttons-text">
+					
 				</div>
 				
 				<!-- Social links buttons -->
-				<div class="col-xs-3 text-center" id="social-nav-buttons">
+				<div class="social-nav-buttons">
 					<a href="https://github.com/fallazc" target="_blank"><span class="extraglyphicon extraglyphicon-icons8-github"></span></a><!-- "Github" -->
 					<a href="https://stackoverflow.com/users/5921207/falla-coulibaly" target="_blank"><span class="extraglyphicon extraglyphicon-icons8-stack-overflow"></span></a><!-- StackOverflow" -->
 					<a href="https://www.linkedin.com/in/fallacoulibaly/" target="_blank"><span class="extraglyphicon extraglyphicon-icons8-linkedin"></span></a><!-- LinkedIn" -->
 				</div>
+				
+				<i id ="main-nav-buttons-toggler" onclick="toggleNavButtons()"><span class="glyphicon glyphicon-menu-hamburger"></span></i><!-- Home -->
+				
 			</div>
-			<div  id="loadingScreen">
-					
-			</div>
-			<div id="contentContainer">
-					
-			</div>
+			<div  id="loadingScreen"></div>
+			<div id="contentContainer"></div>
 		</div>
 	</body>
 </html>

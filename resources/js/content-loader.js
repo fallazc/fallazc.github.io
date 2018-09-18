@@ -12,4 +12,28 @@ let onPageLoad = function(e) {
 	console.log(window.location.href);
 };
 
+let navigationButtonOn = false;
+let toggleNavButtons = function(){
+	console.log('toggleNavButtons');
+	let navButtons = document.getElementById("main-nav-buttons");
+	if (navigationButtonOn) {
+		navButtons.style.display='none';
+		navigationButtonOn = false;
+	}
+	else {
+		navButtons.style.display='block';
+		navigationButtonOn = true;
+	}
+}
+
+function resize() { 
+	let navButtons = document.getElementById("main-nav-buttons");
+	if (window.innerWidth >= 600 && !navigationButtonOn)
+	{
+		toggleNavButtons();
+		console.log('before:' + window.innerWidth + ' ' + window.innerHeight);
+	}
+}
+
 window.onload = onPageLoad;
+window.onresize = resize;

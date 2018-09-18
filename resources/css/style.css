@@ -1,63 +1,77 @@
 body {
     height: 100%;
     width: 100%;
-    position: absolute;
 	background-color:#252627;
 }
 
-.container-fluid{
+.container{
 	min-height: 100%;
     height:auto !important; /* cross-browser */
     height: 100%;
 }
 
-span.glyphicon {
-    font-size: 1.7em;
-	margin-right: 10%;
+.glyphicon {
+	font-size: 1.7em;
+	z-index: 3;
+	padding: 0 5% 0 5%;
+	color:#4d4d4e;
+	transition: opacity 0.25s;
+}
+
+.extraglyphicon {
+	font-size: 1.25em;
+	padding: 0 8% 0 8%;
 	color:#4d4d4e;
 }
 
-a span.glyphicon:hover, a span.extraglyphicon:hover {
+.glyphicon-menu-hamburger {
+	font-size:2em;
+	cursor:pointer;
+	color:#fff;
+	margin: 0 0 0 70%;
+}
+
+.glyphicon:hover,
+.extraglyphicon:hover {
 	color:#08fdd8;
 }
 
-span.glyphicon-user {
-	margin-right: 0%;
+.social-nav-buttons {
+	position:absolute;
+	left:80%;
+	width:20%;
+	padding-top:5px;
+	display: none;
+	text-align: center;
 }
 
-span.extraglyphicon {
-	font-size: 1.25em;
-	margin-right: 10%;
-	color:#4d4d4e;
+.logo{
+	position:absolute;
+	font-size:1em;
+	opacity:0;
 }
 
-span.extraglyphicon-linkedin {
-	margin-left: 0%;
-	margin-right: 0%;
-}
-
-#main-nav-buttons {
-	
-}
-
-#social-nav-buttons {
-	padding-top:0.5%;
-	visibility: hidden;
-}
-
-@media only screen and (min-width: 530px) {
-    #social-nav-buttons {
-        visibility: visible;
-     }
-}
-
-#navbar{
-	min-height: 20%;
-    height:auto !important; /* cross-browser */
-    height: 20%;
+.navbar{
+	top:0;
+	position:absolute;
+    height: 40px !important;
+	width:100%;
 	background-color:#181818;
-	padding-top:9px;
-	padding-bottom:9px;
+	padding-top:5px;
+	
+	z-index: 3 !important;
+}
+
+#main-nav-buttons, #main-nav-buttons-text {
+	text-align: center;
+}
+
+#main-nav-buttons-toggler{
+	position:absolute;
+	left:87%;
+	width:5%;
+	display:block;
+	background-color:#181818;
 }
 
 .home h1{
@@ -78,36 +92,26 @@ span.extraglyphicon-linkedin {
 }
 
 h1 {
-	font-size: 54px !important;
-	line-height: 53px;
-	margin: 0;
+	font-size: 2.5em;
+	line-height: 1em;
 	font-family: sans-serif;
 	font-weight: bold;
 	color: #08fdd8;
+	margin-bottom:0em;
 }
 
 h5 {
 	color:#8d8d8d;
-	margin-top: 9px;
-	font-weight: normal;
-	font-size: 11px;
+	font-size: 0.7em;
+	margin-top:0.5em;
 	font-family: "Open Sans", sans-serif;
-	letter-spacing: 3px;
+	letter-spacing: 0.2em;
 }
 
 .text-zone {
 	position: absolute;
-	left: 10%;
-	top: 50%;
 	width: 85%;
-	max-height: 90%;
-	
-	position: static !important;
-	max-height: auto;
-	min-height: 350px;
-	float: left;
-	margin-left: 10%;
-	margin-top: 10%;
+	margin: 120px 0 0 10%;
 }
 
 .skills {
@@ -122,34 +126,124 @@ h5 {
 	text-decoration: none;
 	padding: 8px 12px;
 	border: 1px solid #08fdd8;
-	margin-top: 25px;
+	margin-top: 10px;
 	float: left;
 	border-radius: 3px;
 	white-space: nowrap;
 }
 
-.btn-contact:hover, btn-contact:visited, btn-contact:link, btn-contact:active{
+.btn-contact:hover{
 	color:#252627;
 	background-color: #08fdd8;
 	text-decoration: none;
 }
 
+#name, #email{
+	width: 100%;
+}
+
+#subject, #message{
+	width:100%;
+}
+
+#message {
+	resize: vertical;
+}
+
+#main-nav-buttons-text{
+	position:absolute;
+	font-size: 0.8em;
+	color: #08fdd8;
+	z-index:2;
+	transition: opacity 0.25s;
+	opacity:0;
+}
+
 #loadingScreen{
 	background-color: green;
-	left:-1000%;
-	height:94.5%;
-    width: 100%;
-    position: absolute;
-	z-index:1;
+	position: fixed;
+	will-change: transform;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 1 !important;
+	display: none;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
 }
 
 #contentContainer{
-	margin-top:9px;
+	margin-top:0.1em;
 	font-weight:normal;
-	font-size:11px;
+	font-size:1em;
 	font-family:"Open Sans", sans-serif;
-	color:red;
 	opacity:1;
+	width:60%;
+	margin-left:20%;
 	transform:scale(1);
-	transition: opacity 1.5s, transform 1.5s;
+}
+
+/*------------------------------------*\
+    RESPONSIVE
+\*------------------------------------*/
+
+@media only screen and (max-width: 599px) {
+	#main-nav-buttons{
+		top:40px;
+		position:absolute;
+		height: 40px;
+		width:100%;
+		background-color:#181818;
+		padding-top:5px;
+		display: none;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	.social-nav-buttons {
+		left:80%;
+		width:20%;
+        display: block;
+	}
+	
+	#main-nav-buttons-toggler{
+		display: none;
+	}
+	
+	#main-nav-buttons{
+		position:absolute;
+		width: 60%;
+		display: block;
+		left:15%;
+	}
+	
+	h1{
+		font-size: 4em;
+	}
+	
+	h5{
+		font-size: 1em;
+	}
+	
+	#name, #email{
+		width: 50%;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+	
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	
 }
