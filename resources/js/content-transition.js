@@ -13,7 +13,6 @@ let showTextDescription = function(name) {
 	var target = base.querySelector('a[rel="'+name+'"]');
 	
 	var rect = target.getBoundingClientRect();
-	console.log(rect.top, rect.right, rect.bottom, rect.left);
 	
 	var halfWidth = (rect.right - rect.left) / 2;
 	var halfHeight = (rect.bottom - rect.top) / 2;
@@ -220,9 +219,44 @@ let transitionToPage = function(pageName){
 	
 	let container = document.getElementById("contentContainer");
 	
-	onTransitionStart(pageTransitioner(container, pageName));
+	onTransitionStart(pageTransitioner(container, pageName ));
 	
 	//$(container).removeClass(c);
 	console.log('Transitioned to page ' + pageName);
 }
 
+// Create the XHR object.
+function createCORSRequest(method, url) {
+  var xhr = new XMLHttpRequest();
+  if ("withCredentials" in xhr) {
+    // XHR for Chrome/Firefox/Opera/Safari.
+    xhr.open(method, url, true);
+  } else if (typeof XDomainRequest != "undefined") {
+    // XDomainRequest for IE.
+    xhr = new XDomainRequest();
+    xhr.open(method, url);
+  } else {
+    // CORS not supported.
+    xhr = null;
+  }
+  return xhr;
+}
+
+// Helper method to parse the title tag from the response.
+function getTitle(text) {
+  return text.match('<title>(.*)?</title>')[1];
+}
+
+let sendEmail = function() {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("message").value;
+  
+  // This is a sample server that supports CORS.
+  var url = 'http://mailsender.us.openode.io?name='+name+'&email='+email+'&subject='+subject+'&message='+message;
+  //var url = 'http://localhost:80?name='+name+'&email='+email+'&subject='+subject+'&message='+message;
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
