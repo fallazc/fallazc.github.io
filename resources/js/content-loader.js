@@ -8,8 +8,6 @@ let onPageLoad = function(e) {
 		const pageName = window.location.href.substring(start + 1, end);
 		transitionToPage(pageName);
 	}
-	
-	console.log(window.location.href);
 };
 
 let navigationButtonOn = false;
@@ -31,7 +29,6 @@ function resize() {
 	if (window.innerWidth >= 600 && !navigationButtonOn)
 	{
 		toggleNavButtons();
-		console.log('before:' + window.innerWidth + ' ' + window.innerHeight);
 	}
 }
 

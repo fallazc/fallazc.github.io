@@ -108,6 +108,11 @@ h5 {
 	letter-spacing: 0.2em;
 }
 
+.messageSent h5{
+	font-size: 1em;
+	text-align:center;
+}
+
 .text-zone {
 	position: absolute;
 	width: 85%;
@@ -151,12 +156,8 @@ h5 {
 	float:right;
 }
 
-#name, #email{
+#name, #email, #subject, #message{
 	width: 100%;
-}
-
-#subject, #message{
-	width:100%;
 }
 
 #message {
@@ -258,6 +259,11 @@ textarea {
 	
 	h5{
 		font-size: 1em;
+	}
+	
+	.messageSent h5{
+		font-size: 2.25em;
+		text-align:center;
 	}
 	
 	#name, #email{

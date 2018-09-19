@@ -66,10 +66,10 @@ const myworkPageContent =
 '<img class="demo thumbnail" src="resources/images/fractal.png" onclick="currentSlide(3)" data-desc=\'' + fractalDesc + '\'>'+
 '</div>'																			+
 '<div class="column mini">'																+
-'<img class="demo thumbnail" src="resources/images/pattern.png" onclick="currentSlide(4)" data-desc=\'' + patternDesc + '\'>'+
+'<img class="demo thumbnail" src="resources/images/pattern.PNG" onclick="currentSlide(4)" data-desc=\'' + patternDesc + '\'>'+
 '</div>'																			+
 '<div class="column mini">'																+
-'<img class="demo thumbnail" src="resources/images/stock.png" onclick="currentSlide(5)" data-desc=\'' + stockDesc + '\'>'+
+'<img class="demo thumbnail" src="resources/images/stock.PNG" onclick="currentSlide(5)" data-desc=\'' + stockDesc + '\'>'+
 '</div>'																			+
 '</div>'																			+
 '</div>'																			+
@@ -77,11 +77,16 @@ const myworkPageContent =
 
 const contactPageContent = 
 '<div class="text-zone contact"><h1>Contact me</h1>'						+
-'<form id="fr1" action="http://mailsender.us.openode.io" method="GET"><input type="text" id="name"  placeholder="Name"/>'			+
+'<form id="fr1"><input type="text" id="name"  placeholder="Name"/>'			+
 '<input type="text" id="email" placeholder="Email"/>'						+
 '<input type="text" id="subject" placeholder="Subject"/>'					+
 '<textarea id="message" placeholder="Message"></textarea>'					+
-'<input type="submit" id="bt1" value="SEND" class="btn-contact"/></form>';
+'<input onclick="sendEmail()" type="button" id="bt1" value="SEND" class="btn-contact"/></form>';
+
+const messageSentPageContent=
+'<div class="text-zone messageSent">'+
+'<h5>I will get back to you within 24 hours, thanks!</h5></div>'
+;
 
 const aboutPageContent = 
 '<div class="text-zone about"> <h1>About me</h1>'	+
