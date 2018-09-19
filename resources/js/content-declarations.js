@@ -22,8 +22,8 @@ const myworkPageContent =
 '<div class="column"> <img src="resources/images/spriter.png" onclick="openModal();currentSlide(1)" class="hover-shadow thumbnail"></div>'							+
 '<div class="column"><img src="resources/images/mano.png" onclick="openModal();currentSlide(2)" class="hover-shadow thumbnail"></div>'							+
 '<div class="column"><img src="resources/images/fractal.png" onclick="openModal();currentSlide(3)" class="hover-shadow thumbnail"></div>'							+
-'<div class="column"><img src="resources/images/pattern.png" onclick="openModal();currentSlide(4)" class="hover-shadow thumbnail"></div>'							+
-'<div class="column"><img src="resources/images/stock.png" onclick="openModal();currentSlide(5)" class="hover-shadow thumbnail"></div></div>'						+
+'<div class="column"><img src="resources/images/patternbreaker.png" onclick="openModal();currentSlide(4)" class="hover-shadow thumbnail"></div>'							+
+'<div class="column"><img src="resources/images/stockmarket.png" onclick="openModal();currentSlide(5)" class="hover-shadow thumbnail"></div></div>'						+
 '<!-- The Modal/Lightbox -->'														+
 '<div id="myModal" class="modal">'													+
 '<span class="close cursor" onclick="closeModal()">&times;</span>'					+
@@ -42,11 +42,11 @@ const myworkPageContent =
 '</div>'																			+
 '<div class="mySlides">'															+
 '<div class="numbertext">4 / 5</div>'												+
-'<img src="resources/images/pattern.png" style="padding:2.5em 0.2em 0 0.2em;">'				+
+'<img src="resources/images/patternbreaker.png" style="padding:2.5em 0.2em 0 0.2em;">'				+
 '</div>'																			+
 '<div class="mySlides">'															+
 '<div class="numbertext">5 / 5</div>'												+
-'<img src="resources/images/stock.png" style="padding:2.5em 0.2em 0 0.2em;">'				+
+'<img src="resources/images/stockmarket.png" style="padding:2.5em 0.2em 0 0.2em;">'				+
 '</div>'																			+
 '<!-- Next/previous controls -->'													+
 '<a class="prev" onclick="plusSlides(-1)">&#10094;</a>'								+
@@ -66,10 +66,10 @@ const myworkPageContent =
 '<img class="demo thumbnail" src="resources/images/fractal.png" onclick="currentSlide(3)" data-desc=\'' + fractalDesc + '\'>'+
 '</div>'																			+
 '<div class="column mini">'																+
-'<img class="demo thumbnail" src="resources/images/pattern.PNG" onclick="currentSlide(4)" data-desc=\'' + patternDesc + '\'>'+
+'<img class="demo thumbnail" src="resources/images/patternbreaker.png" onclick="currentSlide(4)" data-desc=\'' + patternDesc + '\'>'+
 '</div>'																			+
 '<div class="column mini">'																+
-'<img class="demo thumbnail" src="resources/images/stock.PNG" onclick="currentSlide(5)" data-desc=\'' + stockDesc + '\'>'+
+'<img class="demo thumbnail" src="resources/images/stockmarket.png" onclick="currentSlide(5)" data-desc=\'' + stockDesc + '\'>'+
 '</div>'																			+
 '</div>'																			+
 '</div>'																			+
