@@ -77,11 +77,11 @@ const myworkPageContent =
 
 const contactPageContent = 
 '<div class="text-zone contact"><h1>Contact me</h1>'						+
-'<form id="fr1"><input type="text" id="name"  placeholder="Name"/>'			+
+'<form id="fr1" action="http://mailsender.us.openode.io" method="GET"><input type="text" id="name"  placeholder="Name"/>'			+
 '<input type="text" id="email" placeholder="Email"/>'						+
 '<input type="text" id="subject" placeholder="Subject"/>'					+
 '<textarea id="message" placeholder="Message"></textarea>'					+
-'<input onclick="sendEmail()" type="button" id="bt1" value="SEND" class="btn-contact"/></form>';
+'<input type="submit" id="bt1" value="SEND" class="btn-contact"/></form>';
 
 const aboutPageContent = 
 '<div class="text-zone about"> <h1>About me</h1>'	+
