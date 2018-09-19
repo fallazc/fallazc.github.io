@@ -67,7 +67,7 @@ let sendEmail = function() {
   if(validateForm(name, email, subject, message)) {
 	  // This is a sample server that supports CORS.
 	  //var url = 'http://localhost:80?name='+name.value+'&email='+email.value+'&subject='+subject.value+'&message='+message.value;
-	  var url= 'http://mailsender.us.openode.io?name='+name.value+'&email='+email.value+'&subject='+subject.value+'&message='+message.value;
+	  var url= 'http://mailsender.openode.io?name='+name.value+'&email='+email.value+'&subject='+subject.value+'&message='+message.value;
 	  
 	  window.location.replace(url);
 	  console.log(true);
