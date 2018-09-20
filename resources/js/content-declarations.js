@@ -57,7 +57,7 @@ const myworkPageContent =
 '</div>'																			+	
 '<!-- Thumbnail image controls -->'													+	
 '<div class="column mini">'																+
-'<img class="demo thumbnail" src="resources/images/spriter.png" onclick=currentSlide(1)" data-desc=\'' + spriterDesc + '\'>'+
+'<img class="demo thumbnail" src="resources/images/spriter.png" onclick="currentSlide(1)" data-desc=\'' + spriterDesc + '\'>'+
 '</div>'																			+
 '<div class="column mini">'																+
 '<img class="demo thumbnail" src="resources/images/mano.png" onclick="currentSlide(2)" data-desc=\'' + manoDesc + '\'>'+
@@ -85,8 +85,7 @@ const contactPageContent =
 
 const messageSentPageContent=
 '<div class="text-zone messageSent">'+
-'<h5>I will get back to you within 24 hours, thanks!</h5></div>'
-;
+'<h5>I will get back to you within 24 hours, thanks!</h5></div>';
 
 const aboutPageContent = 
 '<div class="text-zone about"> <h1>About me</h1>'	+
